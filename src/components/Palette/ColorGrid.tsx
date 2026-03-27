@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { WRAP_COLORS, COLOR_CATEGORIES, hexToCarFilter, type WrapColor } from "@/lib/colors";
+import { WRAP_COLORS, COLOR_CATEGORIES, type WrapColor } from "@/lib/colors";
 import { ColorSwatch } from "./ColorSwatch";
 import { CarPreview } from "./CarPreview";
 
@@ -21,7 +21,7 @@ export function ColorGrid() {
           color={selectedColor.hex}
           colorName={selectedColor.name}
           brandName={selectedColor.brand}
-          filter={selectedColor.filter || hexToCarFilter(selectedColor.hex)}
+          code={selectedColor.code}
         />
         <p className="mt-3 text-center text-xs md:text-sm text-gray-500">
           Kattints egy színre a palettáról az előnézethez
