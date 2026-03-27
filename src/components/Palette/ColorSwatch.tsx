@@ -15,18 +15,18 @@ export function ColorSwatch({ color, isSelected, onClick }: ColorSwatchProps) {
       onClick={onClick}
       className={`group relative w-full aspect-square rounded-lg md:rounded-xl transition-all duration-300 hover:scale-110 hover:z-10 hover:shadow-lg ${
         isSelected
-          ? "ring-2 ring-dtl-chrome ring-offset-2 ring-offset-dtl-navy scale-110 z-10 shadow-[0_0_20px_rgba(192,192,192,0.3)]"
+          ? "ring-2 ring-primary-container ring-offset-2 ring-offset-surface scale-110 z-10 shadow-[0_0_20px_rgba(234,107,30,0.3)]"
           : ""
       }`}
       style={{ backgroundColor: color.hex }}
       title={color.name}
     >
       <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 hidden md:block">
-        <div className="bg-dtl-dark/95 backdrop-blur-sm text-white text-[10px] font-mono px-2.5 py-1.5 rounded-lg whitespace-nowrap border border-white/10">
+        <div className="bg-surface/95 backdrop-blur-sm text-on-surface text-[10px] font-[family-name:var(--font-space-grotesk)] px-2.5 py-1.5 rounded-lg whitespace-nowrap border border-white/10">
           {color.name}
-          <div className="text-gray-500">{color.brand}</div>
+          <div className="text-outline">{color.brand}</div>
         </div>
-        <div className="w-2 h-2 bg-dtl-dark/95 rotate-45 mx-auto -mt-1 border-r border-b border-white/10" />
+        <div className="w-2 h-2 bg-surface/95 rotate-45 mx-auto -mt-1 border-r border-b border-white/10" />
       </div>
 
       {isSelected && (

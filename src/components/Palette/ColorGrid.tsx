@@ -23,7 +23,7 @@ export function ColorGrid() {
           brandName={selectedColor.brand}
           code={selectedColor.code}
         />
-        <p className="mt-3 text-center text-xs md:text-sm text-gray-500">
+        <p className="mt-3 text-center text-xs md:text-sm text-outline">
           Kattints egy színre a palettáról az előnézethez
         </p>
       </div>
@@ -36,10 +36,10 @@ export function ColorGrid() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-mono tracking-wider transition-all ${
+              className={`px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-[family-name:var(--font-space-grotesk)] tracking-wider transition-all ${
                 activeCategory === cat.id
-                  ? "bg-dtl-chrome text-black"
-                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+                  ? "bg-primary-container text-white"
+                  : "bg-white/5 text-outline hover:bg-white/10 hover:text-on-surface"
               }`}
             >
               {cat.label}
@@ -66,8 +66,8 @@ export function ColorGrid() {
             style={{ backgroundColor: selectedColor.hex }}
           />
           <div>
-            <div className="text-white text-sm md:text-base font-semibold">{selectedColor.name}</div>
-            <div className="text-[10px] md:text-xs font-mono text-gray-500">
+            <div className="text-on-surface text-sm md:text-base font-semibold">{selectedColor.name}</div>
+            <div className="text-[10px] md:text-xs font-[family-name:var(--font-space-grotesk)] text-outline">
               {selectedColor.brand} · {selectedColor.code} · {selectedColor.hex} · {
                 COLOR_CATEGORIES.find((c) => c.id === selectedColor.category)?.label
               }

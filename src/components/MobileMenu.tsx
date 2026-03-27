@@ -20,11 +20,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="absolute inset-0 bg-dtl-dark/95 backdrop-blur-2xl" />
+      <div className="absolute inset-0 bg-surface/95 backdrop-blur-2xl" />
       <div className="relative h-full flex flex-col items-center justify-center gap-6 sm:gap-8 p-8">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-white"
+          className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-on-surface"
           aria-label="Menü bezárása"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             key={link.href}
             href={link.href}
             onClick={onClose}
-            className="text-xl sm:text-2xl font-bold text-white hover:text-dtl-chrome transition-colors"
+            className="text-xl sm:text-2xl font-black uppercase tracking-tight text-on-surface hover:text-primary-container transition-colors"
             style={{ transitionDelay: `${i * 50}ms` }}
           >
             {link.label}
@@ -48,7 +48,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           Ajánlatot kérek
         </GlowButton>
 
-        <a href={`tel:${BUSINESS.phone}`} className="text-gray-500 font-mono text-sm mt-4">
+        <a href={`tel:${BUSINESS.phone}`} className="text-outline font-[family-name:var(--font-space-grotesk)] text-sm mt-4">
           {BUSINESS.phone}
         </a>
       </div>

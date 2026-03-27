@@ -20,7 +20,7 @@ export function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-dtl-dark/90 backdrop-blur-xl border-b border-white/5 py-3"
+            ? "glass-nav py-3"
             : "bg-transparent py-4 md:py-5"
         }`}
       >
@@ -35,10 +35,10 @@ export function Navbar() {
               className="rounded-md"
             />
             <div className="hidden sm:block">
-              <span className="text-base md:text-lg font-bold text-white group-hover:text-dtl-chrome transition-colors">
+              <span className="text-base md:text-lg font-black tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors">
                 DTL Customs
               </span>
-              <span className="block text-[10px] font-mono tracking-[0.25em] text-gray-500 uppercase">
+              <span className="block text-[10px] font-[family-name:var(--font-space-grotesk)] tracking-[0.25em] text-outline uppercase">
                 PPF & TINT
               </span>
             </div>
@@ -50,7 +50,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-dtl-chrome after:transition-all hover:after:w-full"
+                className="text-sm text-outline hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary-container after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -67,9 +67,9 @@ export function Navbar() {
               className="lg:hidden flex flex-col gap-1.5 p-2"
               aria-label="Menü megnyitása"
             >
-              <span className="w-6 h-0.5 bg-white rounded-full" />
-              <span className="w-4 h-0.5 bg-dtl-warm rounded-full" />
-              <span className="w-6 h-0.5 bg-white rounded-full" />
+              <span className="w-6 h-0.5 bg-on-surface rounded-full" />
+              <span className="w-4 h-0.5 bg-primary-container rounded-full" />
+              <span className="w-6 h-0.5 bg-on-surface rounded-full" />
             </button>
           </div>
         </div>

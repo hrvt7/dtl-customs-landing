@@ -27,9 +27,9 @@ export function GlowButton({
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-dtl-chrome to-dtl-chrome-light text-black font-bold hover:shadow-[0_0_30px_rgba(192,192,192,0.4)] active:scale-95",
+      "bg-primary-container text-white font-bold hover:shadow-[0_0_30px_rgba(234,107,30,0.4)] active:scale-95",
     secondary:
-      "bg-transparent border border-white/30 text-white/80 hover:bg-white/10 hover:border-white/50 hover:shadow-[0_0_20px_rgba(192,192,192,0.15)]",
+      "bg-transparent border border-outline/50 text-on-surface hover:bg-white/10 hover:border-primary-container/50 hover:shadow-[0_0_20px_rgba(234,107,30,0.15)]",
   };
 
   const base = `relative inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 cursor-pointer ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;

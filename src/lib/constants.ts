@@ -14,8 +14,6 @@ export const BUSINESS = {
 
 export const NAV_LINKS = [
   { label: "Szolgáltatások", href: "#szolgaltatasok" },
-  { label: "Fólia Paletta", href: "#paletta" },
-  { label: "Miért minket?", href: "#miert-minket" },
   { label: "Galéria", href: "#galeria" },
   { label: "Folyamat", href: "#folyamat" },
   { label: "Kapcsolat", href: "#kapcsolat" },
@@ -62,21 +60,21 @@ export const PROCESS_STEPS = [
   {
     step: 1,
     title: "Konzultáció",
-    description: "Egyeztetünk az elképzeléseidről, fólia típusról és színről. Személyre szabott árajánlatot készítünk.",
+    description: "Részletes állapotfelmérés és esztétikai célok megbeszélése. Prémium anyagok kiválasztása swatchgyűjteményünkből.",
   },
   {
     step: 2,
     title: "Előkészítés",
-    description: "Alapos mosás és felület-előkészítés. Minden szennyeződést eltávolítunk a tökéletes tapadásért.",
+    description: "Többlépcsős tisztítási folyamat. Minden szennyeződést eltávolítunk a molekuláris szintű tapadás biztosítása érdekében.",
   },
   {
     step: 3,
     title: "Telepítés",
-    description: "Precíz, buborékmentes fóliázás klimatizált műhelyben. Profi szerszámokkal, tökéletes eredményért.",
+    description: "Klímavezérelt műhelyben történő felhelyezés. Kézi vagy plotter vágású precíziós munka minősített szakemberektől.",
   },
   {
     step: 4,
-    title: "Átadás",
-    description: "Minőség-ellenőrzés és gondos átadás. Garanciajegyet és ápolási útmutatót adunk.",
+    title: "Minőségellenőrzés",
+    description: "Utókezelés utáni vizsgálat 5000K stúdió megvilágítás alatt. Végső detailing és hidrofób bevonat.",
   },
 ] as const;
