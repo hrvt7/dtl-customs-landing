@@ -3,16 +3,17 @@ import { GlowButton } from "@/components/ui/GlowButton";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[100svh] min-h-[600px] overflow-hidden bg-black">
+    <section className="relative h-[70svh] sm:h-[85svh] md:h-[100svh] min-h-[500px] overflow-hidden bg-black">
       {/* Video background — the car color morphs naturally in the video */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 flex items-center justify-center">
         <video
           autoPlay
           loop
           muted
           playsInline
           poster="/hero/poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="min-w-full min-h-full object-cover"
+          style={{ objectPosition: "center 45%" }}
         >
           <source src="/hero/color-morph.mp4" type="video/mp4" />
         </video>
