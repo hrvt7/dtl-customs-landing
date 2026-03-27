@@ -75,7 +75,7 @@ export const WRAP_COLORS: WrapColor[] = [
   { name: "Satin Battleship Gray", hex: "#6B7B8D", code: "S51", category: "satin", brand: "3M 2080" },
   { name: "Satin Thundercloud", hex: "#4A5568", code: "S201", category: "satin", brand: "3M 2080" },
   { name: "Satin Bitter Yellow", hex: "#C5A000", code: "S335", category: "satin", brand: "3M 2080" },
-  { name: "Satin Canyon Copper", hex: "#B87333", code: "S344", category: "satin", brand: "3M 2080" },
+  { name: "Satin Canyon Copper", hex: "#B87333", code: "S345", category: "satin", brand: "3M 2080" },
   { name: "Satin Smoldering Red", hex: "#8B1A1A", code: "S363", category: "satin", brand: "3M 2080" },
 
   // 3M 2080 Matte

@@ -51,9 +51,9 @@ export function ColorGrid() {
         <div className="grid grid-cols-6 sm:grid-cols-8 gap-2 md:gap-2.5">
           {filtered.map((color) => (
             <ColorSwatch
-              key={color.name}
+              key={`${color.brand}-${color.code}`}
               color={color}
-              isSelected={selectedColor.name === color.name}
+              isSelected={selectedColor.name === color.name && selectedColor.brand === color.brand}
               onClick={() => setSelectedColor(color)}
             />
           ))}
