@@ -17,7 +17,7 @@ export function ColorGrid() {
     <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start">
       {/* Car preview */}
       <div className="order-2 lg:order-1">
-        <CarPreview color={selectedColor.hex} colorName={selectedColor.name} />
+        <CarPreview color={selectedColor.hex} colorName={selectedColor.name} brandName={selectedColor.brand} />
         <p className="mt-3 text-center text-xs md:text-sm text-gray-500">
           Kattints egy színre a palettáról az előnézethez
         </p>
@@ -63,7 +63,7 @@ export function ColorGrid() {
           <div>
             <div className="text-white text-sm md:text-base font-semibold">{selectedColor.name}</div>
             <div className="text-[10px] md:text-xs font-mono text-gray-500">
-              {selectedColor.brand} · {selectedColor.hex} · {
+              {selectedColor.brand} · {selectedColor.code} · {selectedColor.hex} · {
                 COLOR_CATEGORIES.find((c) => c.id === selectedColor.category)?.label
               }
             </div>
