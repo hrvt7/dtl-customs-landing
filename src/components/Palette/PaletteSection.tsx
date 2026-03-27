@@ -4,7 +4,7 @@ import { ColorGrid } from "./ColorGrid";
 
 export function PaletteSection() {
   return (
-    <section id="paletta" className="py-16 md:py-24 lg:py-32 relative">
+    <section id="paletta" className="py-16 md:py-24 lg:py-32 relative section-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Fólia Paletta"

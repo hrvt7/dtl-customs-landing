@@ -2,7 +2,7 @@ import { BUSINESS, NAV_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 py-10 md:py-12">
+    <footer className="border-t border-white/5 py-10 md:py-12" style={{ background: "linear-gradient(180deg, #060E1A 0%, #030810 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>

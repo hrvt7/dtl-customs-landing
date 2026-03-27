@@ -11,13 +11,11 @@ interface GalleryCardProps {
 export function GalleryCard({ title, category, color, index }: GalleryCardProps) {
   return (
     <ScrollReveal delay={index * 0.1}>
-      <div className="group relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden cursor-pointer">
+      <div className="group relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden cursor-pointer border border-white/[0.04]">
         <div
           className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
           style={{
-            background: `linear-gradient(135deg, ${color}33, ${color}11)`,
-            borderWidth: 1,
-            borderColor: `${color}22`,
+            background: `linear-gradient(135deg, ${color}22, #060E1A 70%, ${color}0A)`,
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">

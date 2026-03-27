@@ -19,13 +19,15 @@ export function CarPreview({ color, colorName, brandName }: CarPreviewProps) {
         quality={85}
       />
 
-      {/* Color overlay */}
+      {/* Color overlay — masked to car area only */}
       <div
-        className="absolute inset-0 transition-all duration-700 ease-out"
+        className="absolute inset-0 transition-all duration-700 ease-out pointer-events-none"
         style={{
           backgroundColor: color,
-          mixBlendMode: "multiply",
-          opacity: 0.5,
+          mixBlendMode: "color",
+          opacity: 0.7,
+          maskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
         }}
       />
 

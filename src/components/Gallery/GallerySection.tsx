@@ -12,7 +12,7 @@ const PROJECTS = [
 
 export function GallerySection() {
   return (
-    <section id="galeria" className="py-16 md:py-24 lg:py-32 relative">
+    <section id="galeria" className="py-16 md:py-24 lg:py-32 relative section-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Galéria"

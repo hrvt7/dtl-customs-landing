@@ -34,14 +34,15 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Color overlay — mix-blend-mode magic */}
+      {/* Color overlay — masked to car area only */}
       <div
-        className="absolute inset-0 transition-all duration-[1500ms] ease-in-out"
+        className="absolute inset-0 transition-all duration-[2000ms] ease-in-out pointer-events-none"
         style={{
           backgroundColor: current.hex,
-          mixBlendMode: "multiply",
-          opacity:
-            current.hex === "#E8E8E8" || current.hex === "#1A1A1A" ? 0.3 : 0.55,
+          mixBlendMode: "color",
+          opacity: 0.7,
+          maskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
         }}
       />
 
