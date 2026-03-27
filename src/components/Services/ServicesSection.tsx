@@ -6,7 +6,7 @@ import { SERVICES } from "@/lib/constants";
 export function ServicesSection() {
   return (
     <section id="szolgaltatasok" className="py-16 md:py-24 lg:py-32 garage-section">
-      <GarageBackground opacity={0.15} parallaxSpeed={50} />
+      <GarageBackground darkness={0.55} parallaxSpeed={30} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Szolgáltatásaink"

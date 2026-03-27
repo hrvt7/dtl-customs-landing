@@ -7,18 +7,19 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 interface GarageBackgroundProps {
-  opacity?: number;
+  /** How dark the overlay is (higher = darker, less visible). Default 0.6 */
+  darkness?: number;
   parallaxSpeed?: number;
 }
 
 export function GarageBackground({
-  opacity = 0.15,
-  parallaxSpeed = 50,
+  darkness = 0.6,
+  parallaxSpeed = 30,
 }: GarageBackgroundProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
+    const el = imgRef.current;
     if (!el) return;
 
     const ctx = gsap.context(() => {
@@ -26,7 +27,7 @@ export function GarageBackground({
         yPercent: parallaxSpeed,
         ease: "none",
         scrollTrigger: {
-          trigger: el.parentElement,
+          trigger: el.closest("section") || el.closest("footer") || el.parentElement,
           start: "top bottom",
           end: "bottom top",
           scrub: true,
@@ -38,19 +39,27 @@ export function GarageBackground({
   }, [parallaxSpeed]);
 
   return (
-    <div
-      ref={ref}
-      className="absolute inset-0 -top-[20%] -bottom-[20%] pointer-events-none z-0"
-      style={{ opacity }}
-    >
-      <Image
-        src="/garage-bg.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        quality={60}
-        sizes="100vw"
-        aria-hidden="true"
+    <div data-garage-bg="" className="absolute inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+      {/* Garage photo — parallax */}
+      <div
+        ref={imgRef}
+        className="absolute inset-0 -top-[15%] -bottom-[15%]"
+      >
+        <Image
+          src="/garage-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          style={{ filter: "brightness(1.3)" }}
+          quality={70}
+          sizes="100vw"
+          aria-hidden="true"
+        />
+      </div>
+      {/* Dark overlay to control garage visibility */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundColor: `rgba(10, 10, 10, ${darkness})` }}
       />
     </div>
   );
