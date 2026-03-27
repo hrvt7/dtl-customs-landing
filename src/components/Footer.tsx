@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BUSINESS, NAV_LINKS } from "@/lib/constants";
 import { GarageBackground } from "@/components/ui/GarageBackground";
 
@@ -9,9 +10,13 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-dtl-blue to-dtl-accent flex items-center justify-center font-bold text-white text-xs">
-                DTL
-              </div>
+              <Image
+                src="/logo.png"
+                alt="DTL Customs"
+                width={32}
+                height={32}
+                className="rounded-md"
+              />
               <span className="font-bold text-white">DTL Customs</span>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed">
@@ -45,7 +50,7 @@ export function Footer() {
           <a
             href={BUSINESS.facebook}
             target="_blank"
-            className="text-gray-500 hover:text-dtl-blue transition-colors"
+            className="text-gray-500 hover:text-dtl-chrome transition-colors"
             aria-label="Facebook"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

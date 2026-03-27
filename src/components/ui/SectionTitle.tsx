@@ -9,7 +9,7 @@ export function SectionTitle({ eyebrow, title, subtitle, centered = true }: Sect
   return (
     <div className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}>
       {eyebrow && (
-        <span className="inline-block mb-3 text-xs md:text-sm font-mono font-semibold tracking-[0.2em] uppercase text-dtl-accent">
+        <span className="inline-block mb-3 text-xs md:text-sm font-mono font-semibold tracking-[0.2em] uppercase text-dtl-warm">
           {eyebrow}
         </span>
       )}

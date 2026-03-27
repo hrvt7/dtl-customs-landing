@@ -41,21 +41,21 @@ export function ServiceCard({ title, subtitle, description, icon, features, inde
       delay={index * 0.15}
     >
       <div className="group relative glass glass-hover rounded-2xl p-6 md:p-8 h-full transition-all duration-500 hover:-translate-y-2">
-        <div className="absolute top-0 left-6 right-6 md:left-8 md:right-8 h-px bg-gradient-to-r from-transparent via-dtl-blue/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute top-0 left-6 right-6 md:left-8 md:right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-dtl-blue/10 border border-dtl-blue/20 flex items-center justify-center text-dtl-blue mb-5 md:mb-6 group-hover:bg-dtl-blue/20 group-hover:border-dtl-blue/40 transition-all">
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-dtl-chrome mb-5 md:mb-6 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
           {ICONS[icon]}
         </div>
 
         <h3 className="text-lg md:text-xl font-bold text-white mb-1">{title}</h3>
-        <span className="text-[10px] md:text-xs font-mono text-dtl-accent tracking-wider">{subtitle}</span>
+        <span className="text-[10px] md:text-xs font-mono text-dtl-warm tracking-wider">{subtitle}</span>
 
         <p className="mt-3 md:mt-4 text-gray-400 leading-relaxed text-sm">{description}</p>
 
         <ul className="mt-5 md:mt-6 space-y-2">
           {features.map((f) => (
             <li key={f} className="flex items-center gap-2 text-sm text-gray-300">
-              <div className="w-1.5 h-1.5 rounded-full bg-dtl-blue flex-shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-dtl-chrome flex-shrink-0" />
               {f}
             </li>
           ))}

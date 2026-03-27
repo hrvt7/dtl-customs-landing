@@ -6,13 +6,13 @@ const config: Config = {
     extend: {
       colors: {
         dtl: {
-          navy: "#0A1628",
-          dark: "#060E1A",
-          blue: "#1E90FF",
-          "blue-dark": "#0066CC",
+          navy: "#0C0C0C",
+          dark: "#080808",
+          accent: "#A0A0A0",
+          "accent-dark": "#707070",
+          warm: "#C8B89A",
           chrome: "#C0C0C0",
           "chrome-light": "#E8E8E8",
-          accent: "#00D4FF",
         },
       },
       fontFamily: {
@@ -26,8 +26,8 @@ const config: Config = {
       },
       keyframes: {
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(30,144,255,0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(30,144,255,0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(192,192,192,0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(192,192,192,0.5)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },

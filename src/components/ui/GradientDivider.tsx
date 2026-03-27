@@ -37,7 +37,7 @@ export function GradientDivider() {
     <div className="relative py-2">
       <div
         ref={ref}
-        className="w-full h-px bg-gradient-to-r from-transparent via-dtl-blue/40 to-transparent origin-center"
+        className="w-full h-px bg-gradient-to-r from-transparent via-white/15 to-transparent origin-center"
       />
     </div>
   );

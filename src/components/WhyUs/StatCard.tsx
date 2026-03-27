@@ -33,7 +33,7 @@ export function StatCard({ value, suffix, label }: StatCardProps) {
   return (
     <div ref={ref} className="text-center p-4 md:p-6">
       <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-glow">
-        <span className="bg-gradient-to-r from-dtl-blue to-dtl-accent bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-dtl-chrome to-dtl-chrome-light bg-clip-text text-transparent">
           {count}
           {suffix}
         </span>

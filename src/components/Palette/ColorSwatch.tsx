@@ -15,7 +15,7 @@ export function ColorSwatch({ color, isSelected, onClick }: ColorSwatchProps) {
       onClick={onClick}
       className={`group relative w-full aspect-square rounded-lg md:rounded-xl transition-all duration-300 hover:scale-110 hover:z-10 hover:shadow-lg ${
         isSelected
-          ? "ring-2 ring-dtl-blue ring-offset-2 ring-offset-dtl-navy scale-110 z-10 shadow-[0_0_20px_rgba(30,144,255,0.3)]"
+          ? "ring-2 ring-dtl-chrome ring-offset-2 ring-offset-dtl-navy scale-110 z-10 shadow-[0_0_20px_rgba(192,192,192,0.3)]"
           : ""
       }`}
       style={{ backgroundColor: color.hex }}

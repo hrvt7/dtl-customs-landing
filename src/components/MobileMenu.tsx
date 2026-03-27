@@ -37,7 +37,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             key={link.href}
             href={link.href}
             onClick={onClose}
-            className="text-xl sm:text-2xl font-bold text-white hover:text-dtl-blue transition-colors"
+            className="text-xl sm:text-2xl font-bold text-white hover:text-dtl-chrome transition-colors"
             style={{ transitionDelay: `${i * 50}ms` }}
           >
             {link.label}

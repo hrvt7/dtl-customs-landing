@@ -27,7 +27,7 @@ export function ContactForm() {
               <input
                 required
                 type="text"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-blue focus:outline-none focus:ring-1 focus:ring-dtl-blue/50 transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-chrome focus:outline-none focus:ring-1 focus:ring-dtl-chrome/50 transition-colors"
                 placeholder="Kovács János"
               />
             </div>
@@ -35,7 +35,7 @@ export function ContactForm() {
               <label className="block text-[10px] md:text-xs font-mono text-gray-500 mb-1 md:mb-1.5 tracking-wider">TELEFON</label>
               <input
                 type="tel"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-blue focus:outline-none focus:ring-1 focus:ring-dtl-blue/50 transition-colors"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-chrome focus:outline-none focus:ring-1 focus:ring-dtl-chrome/50 transition-colors"
                 placeholder="+36 30 123 4567"
               />
             </div>
@@ -45,14 +45,14 @@ export function ContactForm() {
             <input
               required
               type="email"
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-blue focus:outline-none focus:ring-1 focus:ring-dtl-blue/50 transition-colors"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-chrome focus:outline-none focus:ring-1 focus:ring-dtl-chrome/50 transition-colors"
               placeholder="pelda@email.com"
             />
           </div>
           <div>
             <label className="block text-[10px] md:text-xs font-mono text-gray-500 mb-1 md:mb-1.5 tracking-wider">SZOLGÁLTATÁS</label>
             <select
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white focus:border-dtl-blue focus:outline-none focus:ring-1 focus:ring-dtl-blue/50 transition-colors appearance-none"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white focus:border-dtl-chrome focus:outline-none focus:ring-1 focus:ring-dtl-chrome/50 transition-colors appearance-none"
               defaultValue=""
             >
               <option value="" disabled className="bg-dtl-dark">Válassz szolgáltatást...</option>
@@ -66,7 +66,7 @@ export function ContactForm() {
             <label className="block text-[10px] md:text-xs font-mono text-gray-500 mb-1 md:mb-1.5 tracking-wider">ÜZENET</label>
             <textarea
               rows={4}
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-blue focus:outline-none focus:ring-1 focus:ring-dtl-blue/50 transition-colors resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm md:text-base text-white placeholder-gray-600 focus:border-dtl-chrome focus:outline-none focus:ring-1 focus:ring-dtl-chrome/50 transition-colors resize-none"
               placeholder="Írd le milyen autód van és mire gondolsz..."
             />
           </div>

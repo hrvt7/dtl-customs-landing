@@ -38,7 +38,7 @@ export function ColorGrid() {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-mono tracking-wider transition-all ${
                 activeCategory === cat.id
-                  ? "bg-dtl-blue text-white"
+                  ? "bg-dtl-chrome text-black"
                   : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
               }`}
             >

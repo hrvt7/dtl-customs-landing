@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { NAV_LINKS } from "@/lib/constants";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { MobileMenu } from "@/components/MobileMenu";
@@ -25,12 +26,16 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 md:gap-3 group">
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-dtl-blue to-dtl-accent flex items-center justify-center font-bold text-white text-xs md:text-sm tracking-tighter">
-              DTL
-            </div>
+          <a href="#" className="flex items-center gap-2 group">
+            <Image
+              src="/logo.png"
+              alt="DTL Customs"
+              width={44}
+              height={44}
+              className="rounded-md"
+            />
             <div className="hidden sm:block">
-              <span className="text-base md:text-lg font-bold text-white group-hover:text-dtl-blue transition-colors">
+              <span className="text-base md:text-lg font-bold text-white group-hover:text-dtl-chrome transition-colors">
                 DTL Customs
               </span>
               <span className="block text-[10px] font-mono tracking-[0.25em] text-gray-500 uppercase">
@@ -45,7 +50,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-dtl-blue after:transition-all hover:after:w-full"
+                className="text-sm text-gray-400 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-dtl-chrome after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -63,7 +68,7 @@ export function Navbar() {
               aria-label="Menü megnyitása"
             >
               <span className="w-6 h-0.5 bg-white rounded-full" />
-              <span className="w-4 h-0.5 bg-dtl-blue rounded-full" />
+              <span className="w-4 h-0.5 bg-dtl-warm rounded-full" />
               <span className="w-6 h-0.5 bg-white rounded-full" />
             </button>
           </div>

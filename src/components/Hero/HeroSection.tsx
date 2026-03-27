@@ -38,7 +38,7 @@ export function HeroSection() {
             </h1>
 
             {/* Accent line */}
-            <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-dtl-blue to-transparent" />
+            <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-dtl-warm to-transparent" />
           </div>
 
           <div className="mt-6 sm:mt-8 md:mt-10 max-w-md lg:max-w-lg">
@@ -60,7 +60,7 @@ export function HeroSection() {
         {/* Bottom: DTL Customs badge */}
         <div className="flex items-center gap-3 sm:gap-4 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-dtl-blue animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-dtl-warm animate-pulse" />
             <span className="text-xs sm:text-sm font-mono tracking-wider text-white/40">
               DTL CUSTOMS
             </span>

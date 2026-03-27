@@ -19,7 +19,7 @@ export function GalleryCard({ title, category, color, index }: GalleryCardProps)
         <div
           className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
           style={{
-            background: `linear-gradient(135deg, ${color}22, #060E1A 70%, ${color}0A)`,
+            background: `linear-gradient(135deg, ${color}22, #080808 70%, ${color}0A)`,
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
@@ -29,7 +29,7 @@ export function GalleryCard({ title, category, color, index }: GalleryCardProps)
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-dtl-dark via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <div className="text-[10px] md:text-xs font-mono text-dtl-accent tracking-wider">{category}</div>
+          <div className="text-[10px] md:text-xs font-mono text-dtl-warm tracking-wider">{category}</div>
           <div className="text-white text-sm md:text-base font-semibold">{title}</div>
         </div>
       </div>
