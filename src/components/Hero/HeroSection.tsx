@@ -1,19 +1,50 @@
 "use client";
+import { useRef, useEffect, useCallback } from "react";
 import { GlowButton } from "@/components/ui/GlowButton";
 
+/**
+ * The Veo video has a slow dolly zoom-in (~8% over 8s).
+ * We counter it with a CSS scale that shrinks in sync,
+ * keeping the car the same apparent size throughout.
+ */
+const ZOOM_START = 1.1;   // start slightly zoomed out (oversize to absorb the video's zoom-in)
+const ZOOM_END = 1.02;    // end close to 1:1
+
 export function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleTimeUpdate = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || !video.duration) return;
+    const progress = video.currentTime / video.duration; // 0→1
+    const scale = ZOOM_START - (ZOOM_START - ZOOM_END) * progress;
+    video.style.transform = `scale(${scale})`;
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    // Also set initial scale
+    video.style.transform = `scale(${ZOOM_START})`;
+
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, [handleTimeUpdate]);
+
   return (
     <section className="relative h-[70svh] sm:h-[85svh] md:h-[100svh] min-h-[500px] overflow-hidden bg-black">
-      {/* Video background — the car color morphs naturally in the video */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      {/* Video background — camera-locked with JS counter-zoom */}
+      <div className="absolute inset-0 overflow-hidden">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           poster="/hero/poster.jpg"
-          className="min-w-full min-h-full object-cover"
-          style={{ objectPosition: "center 45%" }}
+          className="absolute inset-0 w-full h-full object-cover will-change-transform"
+          style={{ objectPosition: "center 45%", transformOrigin: "center center" }}
         >
           <source src="/hero/color-morph.mp4" type="video/mp4" />
         </video>
