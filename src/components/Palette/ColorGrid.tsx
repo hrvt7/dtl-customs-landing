@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { WRAP_COLORS, COLOR_CATEGORIES, type WrapColor } from "@/lib/colors";
+import { WRAP_COLORS, COLOR_CATEGORIES, hexToCarFilter, type WrapColor } from "@/lib/colors";
 import { ColorSwatch } from "./ColorSwatch";
 import { CarPreview } from "./CarPreview";
 
@@ -17,7 +17,12 @@ export function ColorGrid() {
     <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-start">
       {/* Car preview */}
       <div className="order-2 lg:order-1">
-        <CarPreview color={selectedColor.hex} colorName={selectedColor.name} brandName={selectedColor.brand} />
+        <CarPreview
+          color={selectedColor.hex}
+          colorName={selectedColor.name}
+          brandName={selectedColor.brand}
+          filter={selectedColor.filter || hexToCarFilter(selectedColor.hex)}
+        />
         <p className="mt-3 text-center text-xs md:text-sm text-gray-500">
           Kattints egy színre a palettáról az előnézethez
         </p>

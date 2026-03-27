@@ -4,6 +4,57 @@ export interface WrapColor {
   code: string;
   category: "gloss" | "satin" | "matte" | "chrome" | "flip" | "carbon";
   brand: "3M 2080" | "Avery Dennison" | "KPMF" | "Inozetek";
+  filter?: string;
+}
+
+/**
+ * Convert a hex color to an approximate CSS filter string.
+ * This shifts hue from the base red car image to the target color.
+ * For colors where hue-rotation doesn't work well (black, white, grey),
+ * we use brightness/saturation instead.
+ */
+export function hexToCarFilter(hex: string): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const lightness = (max + min) / 2 / 255;
+  const chroma = (max - min) / 255;
+
+  // Very dark colors -> reduce brightness
+  if (lightness < 0.15) {
+    return `brightness(${(0.2 + lightness).toFixed(2)}) saturate(${(chroma * 2).toFixed(1)})`;
+  }
+
+  // Very light colors -> increase brightness, desaturate
+  if (lightness > 0.85) {
+    return `brightness(${(1.2 + lightness * 0.5).toFixed(2)}) saturate(${(chroma * 0.5).toFixed(1)})`;
+  }
+
+  // Low saturation (greys) -> desaturate + adjust brightness
+  if (chroma < 0.15) {
+    return `brightness(${(lightness * 1.4 + 0.3).toFixed(2)}) saturate(0.15)`;
+  }
+
+  // Calculate hue
+  let hue = 0;
+  if (max === r) {
+    hue = ((g - b) / (max - min)) * 60;
+  } else if (max === g) {
+    hue = (2 + (b - r) / (max - min)) * 60;
+  } else {
+    hue = (4 + (r - g) / (max - min)) * 60;
+  }
+  if (hue < 0) hue += 360;
+
+  // Base car is red (~0deg), so hue-rotate = target hue
+  const saturation = chroma / (1 - Math.abs(2 * lightness - 1));
+  const sat = Math.min(Math.max(saturation * 1.5, 0.3), 2.0);
+  const bright = Math.min(Math.max(lightness * 1.5 + 0.3, 0.4), 1.5);
+
+  return `hue-rotate(${Math.round(hue)}deg) saturate(${sat.toFixed(1)}) brightness(${bright.toFixed(2)})`;
 }
 
 export const WRAP_COLORS: WrapColor[] = [
@@ -75,15 +126,16 @@ export interface HeroMorphColor {
   code: string;
   hex: string;
   brand: string;
+  filter: string;
 }
 
 export const HERO_MORPH_COLORS: HeroMorphColor[] = [
-  { name: "Satin Black", code: "S12", hex: "#1A1A1A", brand: "3M 2080" },
-  { name: "Satin Perfect Blue", code: "S344", hex: "#0055AA", brand: "3M 2080" },
-  { name: "Gloss Cardinal Red", code: "SW900-436", hex: "#8B0000", brand: "Avery Dennison" },
-  { name: "Satin White", code: "S10", hex: "#E8E8E8", brand: "3M 2080" },
-  { name: "Matte Aurora Green", code: "K75463", hex: "#2D5A27", brand: "KPMF" },
-  { name: "Satin Flip Volcanic Flare", code: "SP236", hex: "#B22222", brand: "3M 2080" },
-  { name: "Satin Metallic Cool Grey", code: "SW900-802", hex: "#6B7B8D", brand: "Avery Dennison" },
-  { name: "Gloss Hot Rod Red", code: "G13", hex: "#CC0000", brand: "3M 2080" },
+  { name: "Gloss Hot Rod Red", code: "G13", hex: "#CC0000", brand: "3M 2080", filter: "hue-rotate(0deg) saturate(1.2)" },
+  { name: "Satin Perfect Blue", code: "S344", hex: "#0055AA", brand: "3M 2080", filter: "hue-rotate(230deg) saturate(1.3)" },
+  { name: "Satin Black", code: "S12", hex: "#1A1A1A", brand: "3M 2080", filter: "brightness(0.25) saturate(0.3)" },
+  { name: "Satin Metallic Cool Grey", code: "SW900-802", hex: "#6B7B8D", brand: "Avery Dennison", filter: "brightness(0.7) saturate(0.2) hue-rotate(200deg)" },
+  { name: "Matte Aurora Green", code: "K75463", hex: "#2D5A27", brand: "KPMF", filter: "hue-rotate(120deg) saturate(0.8) brightness(0.7)" },
+  { name: "Gloss Deep Orange", code: "G24", hex: "#FF6600", brand: "3M 2080", filter: "hue-rotate(30deg) saturate(1.5)" },
+  { name: "Satin Flip Volcanic Flare", code: "SP236", hex: "#B22222", brand: "3M 2080", filter: "hue-rotate(350deg) saturate(1.4) brightness(0.8)" },
+  { name: "Gloss Diamond White", code: "SW900-101", hex: "#F5F5F5", brand: "Avery Dennison", filter: "brightness(1.6) saturate(0.1)" },
 ];

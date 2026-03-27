@@ -22,93 +22,88 @@ export function HeroSection() {
 
   return (
     <section className="relative h-[100svh] min-h-[600px] overflow-hidden bg-black">
-      {/* Base car photo */}
+      {/* Car photo with CSS filter color change */}
       <div className="absolute inset-0">
         <Image
           src="/hero/car-base.jpg"
           alt="Prémium autófóliázás"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center transition-[filter] duration-[2000ms] ease-in-out"
+          style={{ filter: current.filter }}
           priority
           quality={90}
         />
       </div>
 
-      {/* Color overlay — masked to car area only */}
-      <div
-        className="absolute inset-0 transition-all duration-[2000ms] ease-in-out pointer-events-none"
-        style={{
-          backgroundColor: current.hex,
-          mixBlendMode: "color",
-          opacity: 0.7,
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 55%, black 30%, transparent 80%)",
-        }}
-      />
-
-      {/* Dark vignette overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+      {/* Dark vignette overlays for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-20 md:py-24">
-        {/* Main text */}
+      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+        {/* Main text — massive, integrated with the photo */}
         <div className="flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full">
-          <h1 className="font-bold tracking-tighter leading-[0.85]">
-            <span className="block text-[15vw] md:text-[12vw] lg:text-[10vw] text-white opacity-95">
-              AUTÓ
-            </span>
-            <span className="flex items-center gap-4 md:gap-6">
-              <span className="text-[15vw] md:text-[12vw] lg:text-[10vw] text-white/60">
-                FÓLIÁZÁS
+          <div className="relative">
+            <h1 className="font-black tracking-[-0.06em] leading-[0.82] select-none">
+              <span className="block text-[18vw] sm:text-[16vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] text-white">
+                AUTO
               </span>
-              <span className="text-white/40 text-[6vw] md:text-[4vw]">
-                ›
+              <span className="block text-[18vw] sm:text-[16vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] text-white/50">
+                FOLIAZES
               </span>
-            </span>
-          </h1>
+            </h1>
 
-          <div className="mt-6 md:mt-8 max-w-lg">
-            <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed mb-6 md:mb-8">
-              Az álmaidat építjük! Professzionális autófóliázás minősített
-              anyagokkal Szombathelyen.
+            {/* Accent line */}
+            <div className="mt-4 sm:mt-6 h-[2px] w-16 sm:w-24 bg-gradient-to-r from-dtl-blue to-transparent" />
+          </div>
+
+          <div className="mt-6 sm:mt-8 md:mt-10 max-w-md lg:max-w-lg">
+            <p className="text-sm sm:text-base md:text-lg text-white/60 leading-relaxed mb-6 sm:mb-8">
+              Professzionalis autofoliazes minositett anyagokkal Szombathelyen.
+              Az almaidat epitjuk.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <GlowButton href="#kapcsolat" size="lg">
-                Ingyenes Árajánlat
+                Ingyenes Arajanlat
               </GlowButton>
               <GlowButton href="#paletta" size="lg" variant="secondary">
-                Színek Felfedezése
+                Szinek Felfedezese
               </GlowButton>
             </div>
           </div>
         </div>
 
-        {/* Bottom: color indicator */}
-        <div className="flex items-center gap-4 max-w-7xl mx-auto w-full">
-          <div
-            className="w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-white/40 transition-colors duration-1000"
-            style={{ backgroundColor: current.hex }}
-          />
-          <div className="text-xs md:text-sm font-mono">
-            <span className="text-white/50">{current.brand}</span>
-            <span className="text-white/30 mx-2">&middot;</span>
-            <span className="text-white/70">{current.name}</span>
-            {current.code && (
-              <>
-                <span className="text-white/30 mx-2">&middot;</span>
-                <span className="text-white/40">{current.code}</span>
-              </>
-            )}
+        {/* Bottom: color indicator — elegant, minimal */}
+        <div className="flex items-center gap-3 sm:gap-4 max-w-7xl mx-auto w-full">
+          {/* Color dot with glow */}
+          <div className="relative">
+            <div
+              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-colors duration-[2000ms]"
+              style={{ backgroundColor: current.hex }}
+            />
+            <div
+              className="absolute inset-0 rounded-full blur-md transition-colors duration-[2000ms] opacity-60"
+              style={{ backgroundColor: current.hex }}
+            />
           </div>
-          <div className="flex gap-1.5 ml-auto">
+
+          {/* Brand + Color name */}
+          <div className="text-xs sm:text-sm font-mono tracking-wide">
+            <span className="text-white/40">{current.brand}</span>
+            <span className="text-white/20 mx-1.5 sm:mx-2">/</span>
+            <span className="text-white/70 font-medium">{current.name}</span>
+          </div>
+
+          {/* Navigation dots */}
+          <div className="flex gap-1 sm:gap-1.5 ml-auto">
             {HERO_MORPH_COLORS.map((c, i) => (
               <button
                 key={c.code + c.hex}
                 onClick={() => setColorIndex(i)}
-                className={`w-2 h-2 md:w-2.5 md:h-2.5 rounded-full transition-all duration-300 ${
+                aria-label={`Switch to ${c.name}`}
+                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 rounded-full transition-all duration-500 ${
                   i === colorIndex
-                    ? "bg-white scale-125"
+                    ? "bg-white scale-125 shadow-[0_0_6px_rgba(255,255,255,0.5)]"
                     : "bg-white/20 hover:bg-white/40"
                 }`}
               />
