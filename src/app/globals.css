@@ -47,19 +47,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Dark section backgrounds with subtle variation */
-.section-dark {
-  background: linear-gradient(180deg, #060E1A 0%, #0A1628 50%, #060E1A 100%);
+/* Garage section background — shared across all sections */
+.garage-section {
   position: relative;
-}
-.section-darker {
-  background: linear-gradient(180deg, #040A14 0%, #060E1A 50%, #040A14 100%);
-  position: relative;
+  background: #0a0a0a;
+  overflow: hidden;
 }
 
-/* Subtle noise texture overlay for depth */
-.section-dark::before,
-.section-darker::before {
+/* Noise texture overlay for extra depth on top of garage bg */
+.garage-section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -67,13 +63,12 @@ body {
   background-repeat: repeat;
   background-size: 256px 256px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
-.section-dark > *,
-.section-darker > * {
+.garage-section > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Glassmorphism utility */

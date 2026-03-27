@@ -1,11 +1,13 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { GarageBackground } from "@/components/ui/GarageBackground";
 import { ContactForm } from "./ContactForm";
 import { BUSINESS } from "@/lib/constants";
 
 export function ContactSection() {
   return (
-    <section id="kapcsolat" className="py-16 md:py-24 lg:py-32 relative section-darker">
+    <section id="kapcsolat" className="py-16 md:py-24 lg:py-32 garage-section">
+      <GarageBackground opacity={0.08} parallaxSpeed={40} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Kapcsolat"

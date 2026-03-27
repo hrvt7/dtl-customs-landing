@@ -10,7 +10,11 @@ interface GalleryCardProps {
 
 export function GalleryCard({ title, category, color, index }: GalleryCardProps) {
   return (
-    <ScrollReveal delay={index * 0.1}>
+    <ScrollReveal
+      from={{ opacity: 0, y: 40, scale: 0.9 }}
+      to={{ opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }}
+      delay={index * 0.1}
+    >
       <div className="group relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden cursor-pointer border border-white/[0.04]">
         <div
           className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"

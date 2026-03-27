@@ -1,11 +1,13 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { StatCard } from "./StatCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { GarageBackground } from "@/components/ui/GarageBackground";
 import { STATS } from "@/lib/constants";
 
 export function WhyUsSection() {
   return (
-    <section id="miert-minket" className="py-16 md:py-24 lg:py-32 relative section-dark">
+    <section id="miert-minket" className="py-16 md:py-24 lg:py-32 garage-section">
+      <GarageBackground opacity={0.15} parallaxSpeed={50} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Miért minket?"
