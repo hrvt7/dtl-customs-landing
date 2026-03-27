@@ -2,7 +2,7 @@
 
 export function HeroSection() {
   return (
-    <section className="relative h-[60svh] sm:h-[85svh] md:h-[100svh] min-h-[400px] overflow-hidden bg-black">
+    <section className="relative h-[100svh] min-h-[500px] overflow-hidden bg-black">
       {/* Video background */}
       <div className="absolute inset-0">
         <video
