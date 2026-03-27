@@ -23,9 +23,9 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
       {/* Content — just the big title + bottom bar, no buttons on mobile */}
-      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 py-12 sm:py-20 md:py-24">
-        {/* Title only — positioned at top so car is visible */}
-        <div className="max-w-7xl mx-auto w-full">
+      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-24 pb-12 sm:pb-20 md:pb-24">
+        {/* Title — pushed down a bit on mobile so it doesn't sit too high */}
+        <div className="max-w-7xl mx-auto w-full mt-4 sm:mt-0">
           <h1 className="font-black tracking-[-0.06em] leading-[0.82] select-none">
             <span className="block text-[18vw] sm:text-[16vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] text-white">
               AUTÓ
