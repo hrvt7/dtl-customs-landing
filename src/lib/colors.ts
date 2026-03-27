@@ -121,21 +121,3 @@ export const COLOR_CATEGORIES = [
   { id: "carbon", label: "Karbon" },
 ] as const;
 
-export interface HeroMorphColor {
-  name: string;
-  code: string;
-  hex: string;
-  brand: string;
-  filter: string;
-}
-
-export const HERO_MORPH_COLORS: HeroMorphColor[] = [
-  { name: "Gloss Hot Rod Red", code: "G13", hex: "#CC0000", brand: "3M 2080", filter: "hue-rotate(0deg) saturate(1.2)" },
-  { name: "Satin Perfect Blue", code: "S344", hex: "#0055AA", brand: "3M 2080", filter: "hue-rotate(230deg) saturate(1.3)" },
-  { name: "Satin Black", code: "S12", hex: "#1A1A1A", brand: "3M 2080", filter: "brightness(0.25) saturate(0.3)" },
-  { name: "Satin Metallic Cool Grey", code: "SW900-802", hex: "#6B7B8D", brand: "Avery Dennison", filter: "brightness(0.7) saturate(0.2) hue-rotate(200deg)" },
-  { name: "Matte Aurora Green", code: "K75463", hex: "#2D5A27", brand: "KPMF", filter: "hue-rotate(120deg) saturate(0.8) brightness(0.7)" },
-  { name: "Gloss Deep Orange", code: "G24", hex: "#FF6600", brand: "3M 2080", filter: "hue-rotate(30deg) saturate(1.5)" },
-  { name: "Satin Flip Volcanic Flare", code: "SP236", hex: "#B22222", brand: "3M 2080", filter: "hue-rotate(350deg) saturate(1.4) brightness(0.8)" },
-  { name: "Gloss Diamond White", code: "SW900-101", hex: "#F5F5F5", brand: "Avery Dennison", filter: "brightness(1.6) saturate(0.1)" },
-];

@@ -17,7 +17,7 @@ export function CarPreview({ color, colorName, brandName, filter }: CarPreviewPr
       {/* Car photo with filter-based color change */}
       <Image
         src="/hero/car-base.jpg"
-        alt="Auto folia elonezet"
+        alt="Autó fólia előnézet"
         fill
         className="object-cover transition-[filter] duration-700 ease-out"
         style={{ filter: imageFilter }}
