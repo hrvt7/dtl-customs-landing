@@ -1,9 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { NAV_LINKS } from "@/lib/constants";
-import { GlowButton } from "@/components/ui/GlowButton";
 import { MobileMenu } from "@/components/MobileMenu";
+
+const NAV_LINKS = [
+  { label: "Szolgáltatások", href: "#szolgaltatasok" },
+  { label: "Galéria", href: "#munkaink" },
+  { label: "Felszerelés", href: "#szolgaltatasok" },
+  { label: "Kapcsolat", href: "#kapcsolat" },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,60 +22,42 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "glass-nav py-3"
-            : "bg-transparent py-4 md:py-5"
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          scrolled ? "glass-nav py-3" : "bg-[#131313]/90 backdrop-blur-md py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <Image
-              src="/logo.png"
-              alt="DTL Customs"
-              width={44}
-              height={44}
-              className="rounded-md"
-            />
-            <div className="hidden sm:block">
-              <span className="text-base md:text-lg font-black tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors">
-                DTL Customs
-              </span>
-              <span className="block text-[10px] font-[family-name:var(--font-space-grotesk)] tracking-[0.25em] text-outline uppercase">
-                PPF & TINT
-              </span>
-            </div>
+        <div className="max-w-none mx-auto px-8 flex items-center justify-between">
+          <a href="#" className="text-2xl font-bold tracking-tighter text-white uppercase font-[family-name:var(--font-dm-sans)]">
+            DTL CUSTOMS
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden md:flex gap-12 items-center">
             {NAV_LINKS.map((link) => (
               <a
-                key={link.href}
+                key={link.href + link.label}
                 href={link.href}
-                className="text-sm text-outline hover:text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary-container after:transition-all hover:after:w-full"
+                className="label-technical text-white/90 hover:text-white transition-colors duration-200"
               >
                 {link.label}
               </a>
             ))}
+            <a
+              href="#ajanlatkeres"
+              className="bg-accent-orange text-white px-8 py-3 label-technical hover:opacity-90 transition-all active:scale-[0.98]"
+            >
+              Ajánlatot kérek
+            </a>
           </div>
 
-          {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3 md:gap-4">
-            <GlowButton href="#kapcsolat" size="sm" className="hidden md:inline-flex">
-              Ajánlatot kérek
-            </GlowButton>
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="lg:hidden flex flex-col gap-1.5 p-2"
-              aria-label="Menü megnyitása"
-            >
-              <span className="w-6 h-0.5 bg-on-surface rounded-full" />
-              <span className="w-4 h-0.5 bg-primary-container rounded-full" />
-              <span className="w-6 h-0.5 bg-on-surface rounded-full" />
-            </button>
-          </div>
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-white p-2"
+            aria-label="Menü megnyitása"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </nav>
 

@@ -1,9 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/Hero/HeroSection";
+import { BrandsTicker } from "@/components/BrandsTicker";
 import { ServicesSection } from "@/components/Services/ServicesSection";
-import { PaletteSection } from "@/components/Palette/PaletteSection";
-import { GallerySection } from "@/components/Gallery/GallerySection";
-import { ProcessSection } from "@/components/Process/ProcessSection";
+import { PortfolioSection } from "@/components/Portfolio/PortfolioSection";
 import { ContactSection } from "@/components/Contact/ContactSection";
 import { Footer } from "@/components/Footer";
 
@@ -13,10 +12,9 @@ export default function Page() {
       <Navbar />
       <main>
         <HeroSection />
+        <BrandsTicker />
         <ServicesSection />
-        <PaletteSection />
-        <GallerySection />
-        <ProcessSection />
+        <PortfolioSection />
         <ContactSection />
         <Footer />
       </main>

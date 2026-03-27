@@ -1,66 +1,51 @@
 "use client";
 
+const HERO_IMG = "https://lh3.googleusercontent.com/aida-public/AB6AXuD-9fFSoXBjvUs6PpUdImBajshsiR0cQ1q_Frax6GWMlqmx3kfzsoVYVhZu99LLZPa_EFQOs9hG8XE41DYhgFFkyIScyquH1xIUH-kOKRIVaQVnjm_8upD35KwueSvIk4Pe9Gly3PNS0EIfkrbc9l-0CqHHnD7BfWJa88EU_F_xgB6P4O8LEp3z7vw08eIogOex9zNhPw5n7VYuikNHXPsIXNSAoIOu2dSaSL6OHH8RmnxREwSbIZlVzZ7JSaFddC3H8fZI0Ju8uKzL";
+
 export function HeroSection() {
   return (
-    <section className="relative h-[100svh] min-h-[500px] overflow-hidden bg-black">
-      {/* Video background */}
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/hero/poster.jpg"
-          className="absolute inset-0 w-full h-full object-contain sm:object-cover"
-          style={{ objectPosition: "center center" }}
-        >
-          <source src="/hero/color-morph.mp4" type="video/mp4" />
-        </video>
+    <section className="relative h-screen flex flex-col justify-center px-8 lg:px-24 overflow-hidden bg-black">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={HERO_IMG}
+          alt="DTL Customs hero"
+          className="w-full h-full object-cover opacity-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
       </div>
 
-      {/* Warm vignette overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40" />
-      <div className="absolute inset-0 bg-gradient-to-r from-surface/50 via-transparent to-transparent" />
+      {/* Top left metadata */}
+      <div className="absolute top-32 left-8 lg:left-24 z-10">
+        <p className="label-technical text-white/60 text-xs">DTL CUSTOMS &bull; EST. 2024</p>
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 md:pt-24 pb-12 sm:pb-20 md:pb-24">
-        {/* Label + Title */}
-        <div className="max-w-7xl mx-auto w-full mt-4 sm:mt-0">
-          {/* Space Grotesk label */}
-          <span className="inline-block mb-4 text-[10px] sm:text-xs font-[family-name:var(--font-space-grotesk)] tracking-[0.3em] uppercase text-primary-container">
-            DTL CUSTOMS &bull; EST. 2024
-          </span>
+      <div className="relative z-10 w-full">
+        <h1 className="text-[clamp(80px,12vw,160px)] font-bold tracking-tighter text-white uppercase leading-[0.8] mb-8 font-[family-name:var(--font-dm-sans)]">
+          AUTÓ<br />FÓLIÁZÁS
+        </h1>
+        <p className="text-lg md:text-xl font-medium text-white/80 max-w-xl mb-12 leading-relaxed">
+          Prémium autófóliázás Szombathelyen. PPF védőfólia, karosszériafóliázás, autóüveg fóliázás — professzionális kivitelezéssel.
+        </p>
+        <a
+          href="#ajanlatkeres"
+          className="inline-block bg-accent-orange text-white px-12 py-5 label-technical text-center hover:opacity-90 transition-all uppercase tracking-widest font-bold"
+        >
+          Ajánlatkérés
+        </a>
+      </div>
 
-          <h1 className="font-black tracking-[-0.06em] leading-[0.82] select-none">
-            <span className="block text-[18vw] sm:text-[16vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] text-on-surface">
-              AUTÓ
-            </span>
-            <span className="block text-[18vw] sm:text-[16vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] text-on-surface/40 text-stroke">
-              FÓLIÁZÁS
-            </span>
-          </h1>
+      {/* Bottom left */}
+      <div className="absolute bottom-12 left-8 lg:left-24 z-10">
+        <p className="label-technical text-white/60 flex items-center gap-2">
+          <span className="text-accent-orange text-lg">&middot;</span> DTL CUSTOMS / PPF &amp; TINT &amp; WRAP
+        </p>
+      </div>
 
-          <p className="mt-4 sm:mt-6 max-w-md text-sm sm:text-base text-outline leading-relaxed">
-            Prémium autófóliázás Szombathelyen. Szín csere, PPF védőfólia, kerámia üvegfólia — professzionális kivitelezéssel.
-          </p>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="flex items-center gap-3 sm:gap-4 max-w-7xl mx-auto w-full">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
-            <span className="text-[10px] sm:text-sm font-[family-name:var(--font-space-grotesk)] tracking-wider text-on-surface/40">
-              DTL CUSTOMS
-            </span>
-            <span className="text-on-surface/20 mx-1">/</span>
-            <span className="text-[10px] sm:text-sm font-[family-name:var(--font-space-grotesk)] text-on-surface/60">
-              PPF & TINT & WRAP
-            </span>
-          </div>
-          <div className="ml-auto text-[10px] sm:text-xs font-[family-name:var(--font-space-grotesk)] text-on-surface/30">
-            Szombathely
-          </div>
-        </div>
+      {/* Bottom right */}
+      <div className="absolute bottom-12 right-8 lg:right-24 z-10">
+        <p className="label-technical text-white/60">Szombathely</p>
       </div>
     </section>
   );

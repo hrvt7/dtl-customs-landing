@@ -21,60 +21,60 @@ export const NAV_LINKS = [
 
 export const SERVICES = [
   {
-    id: "color-change",
-    title: "Szín Csere Fóliázás",
-    subtitle: "Color Change Wrap",
-    description:
-      "Teljes karosszéria fóliázás prémium minőségű vinyl fóliákkal. Matt, fényes, szatén, króm — bármilyen szín, amit elképzelsz.",
-    icon: "palette",
-    features: ["3M & Avery minőség", "200+ szín választék", "5 év garancia", "3-5 nap kivitelezés"],
-  },
-  {
     id: "ppf",
     title: "PPF Védőfólia",
     subtitle: "Paint Protection Film",
     description:
-      "Láthatatlan, öntisztuló védőfólia amely megóvja az eredeti fényezést kavicsfelverődés, karcok és UV sugárzás ellen.",
+      "Kőfelverődés elleni karosszéria-védőfólia. XPEL Ultimate Plus, STEK DYNOshield — 150 mikronos, öngyógyító technológia. A gyári lakkfelület sértetlen marad.",
     icon: "shield",
-    features: ["Öntisztuló technológia", "Karcálló felület", "10 év garancia", "Eredeti fényezés védelem"],
+    features: ["XPEL Ultimate Plus", "STEK DYNOshield", "Öngyógyító felület", "10 év garancia"],
+  },
+  {
+    id: "color-change",
+    title: "Karosszériafóliázás",
+    subtitle: "Car Wrap",
+    description:
+      "Teljes vagy részleges karosszéria fóliázás 3M 2080, Avery Dennison Supreme Wrapping és KPMF fóliákkal. Matt, szatén, fényes és speciális textúrák. A fólia védi a gyári fényezést és bármikor eltávolítható.",
+    icon: "palette",
+    features: ["3M 2080 Series", "Avery Dennison", "KPMF & Inozetek", "Bármikor eltávolítható"],
   },
   {
     id: "tint",
-    title: "Üvegfóliázás",
+    title: "Autóüveg Fóliázás",
     subtitle: "Window Tint",
     description:
-      "Professzionális ablak sötétítés és hővédelem. Csökkenti az UV sugárzást, a hőterhelést és növeli a magánéleted védelmét.",
+      "Hő- és fényvédő fóliák felhelyezése LLumar és 3M Ceramic IR fóliákkal. 99% UV-védelem, akár 60%-os hőcsökkentés. Nem zavarja a GPS és mobiljeleket.",
     icon: "sun",
-    features: ["99% UV szűrés", "Hővédelem", "Választható sötétség", "Buborékmentes telepítés"],
+    features: ["LLumar ATR", "3M Ceramic IR", "99% UV-védelem", "Élettartam garancia"],
   },
 ] as const;
 
 export const STATS = [
-  { value: 500, suffix: "+", label: "Elégedett ügyfél" },
-  { value: 8, suffix: "+", label: "Év tapasztalat" },
-  { value: 200, suffix: "+", label: "Fólia szín" },
-  { value: 100, suffix: "%", label: "Garancia" },
+  { value: 500, suffix: "+", label: "Elvégzett munka" },
+  { value: 5, suffix: "+", label: "Év tapasztalat" },
+  { value: 10, suffix: " év", label: "Garancia PPF-re" },
+  { value: 100, suffix: "%", label: "Elégedettség" },
 ] as const;
 
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Konzultáció",
-    description: "Részletes állapotfelmérés és esztétikai célok megbeszélése. Prémium anyagok kiválasztása swatchgyűjteményünkből.",
+    title: "Egyeztetés",
+    description: "Felmérjük az autó állapotát, megbeszéljük az igényeket és kiválasztjuk a megfelelő fóliát vagy bevonatot.",
   },
   {
     step: 2,
     title: "Előkészítés",
-    description: "Többlépcsős tisztítási folyamat. Minden szennyeződést eltávolítunk a molekuláris szintű tapadás biztosítása érdekében.",
+    description: "Az autó alapos mosása és zsírtalanítása. A felület tökéletes tisztasága a tartós tapadás alapja.",
   },
   {
     step: 3,
-    title: "Telepítés",
-    description: "Klímavezérelt műhelyben történő felhelyezés. Kézi vagy plotter vágású precíziós munka minősített szakemberektől.",
+    title: "Felhelyezés",
+    description: "A fólia kézi szabása és felhelyezése zárt, pormentes műhelyben. Minden élt és sarkot precízen illesztünk.",
   },
   {
     step: 4,
-    title: "Minőségellenőrzés",
-    description: "Utókezelés utáni vizsgálat 5000K stúdió megvilágítás alatt. Végső detailing és hidrofób bevonat.",
+    title: "Átadás",
+    description: "Végső ellenőrzés, ápolási útmutató átadása és garanciajegy kiállítása.",
   },
 ] as const;
