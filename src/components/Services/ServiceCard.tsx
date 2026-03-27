@@ -36,9 +36,9 @@ const ICONS: Record<string, React.ReactNode> = {
 export function ServiceCard({ title, subtitle, description, icon, features, index }: ServiceCardProps) {
   return (
     <ScrollReveal
-      from={{ opacity: 0, y: 60, scale: 0.95 }}
-      to={{ opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }}
-      delay={index * 0.15}
+      from={{ opacity: 0, y: 20 }}
+      to={{ opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }}
+      delay={index * 0.1}
     >
       <div className="group relative glass glass-hover rounded-2xl p-6 md:p-8 h-full transition-all duration-500 hover:-translate-y-2">
         <div className="absolute top-0 left-6 right-6 md:left-8 md:right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

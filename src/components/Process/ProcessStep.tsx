@@ -12,9 +12,9 @@ interface ProcessStepProps {
 export function ProcessStep({ step, title, description, isLast, index }: ProcessStepProps) {
   return (
     <ScrollReveal
-      from={{ opacity: 0, x: -40 }}
-      to={{ opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }}
-      delay={index * 0.15}
+      from={{ opacity: 0, y: 15 }}
+      to={{ opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }}
+      delay={index * 0.1}
     >
       <div className="relative flex gap-4 md:gap-6">
         <div className="flex flex-col items-center">

@@ -1,12 +1,10 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ServiceCard } from "./ServiceCard";
-import { GarageBackground } from "@/components/ui/GarageBackground";
 import { SERVICES } from "@/lib/constants";
 
 export function ServicesSection() {
   return (
-    <section id="szolgaltatasok" className="py-16 md:py-24 lg:py-32 garage-section">
-      <GarageBackground darkness={0.55} parallaxSpeed={30} />
+    <section id="szolgaltatasok" className="py-16 md:py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Szolgáltatásaink"

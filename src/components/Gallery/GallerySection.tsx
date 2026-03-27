@@ -1,6 +1,5 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { GalleryCard } from "./GalleryCard";
-import { GarageBackground } from "@/components/ui/GarageBackground";
 
 const PROJECTS = [
   { title: "BMW M4 Szatén Fekete", category: "Color Change", color: "#1A1A1A" },
@@ -13,8 +12,7 @@ const PROJECTS = [
 
 export function GallerySection() {
   return (
-    <section id="galeria" className="py-16 md:py-24 lg:py-32 garage-section">
-      <GarageBackground darkness={0.7} parallaxSpeed={20} />
+    <section id="galeria" className="py-16 md:py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Galéria"

@@ -1,12 +1,10 @@
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ProcessStep } from "./ProcessStep";
-import { GarageBackground } from "@/components/ui/GarageBackground";
 import { PROCESS_STEPS } from "@/lib/constants";
 
 export function ProcessSection() {
   return (
-    <section id="folyamat" className="py-16 md:py-24 lg:py-32 garage-section">
-      <GarageBackground darkness={0.55} parallaxSpeed={30} />
+    <section id="folyamat" className="py-16 md:py-24 lg:py-32 relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           eyebrow="Hogyan működik?"
