@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dtl-navy: #0A1628;
+  --color-dtl-dark: #060E1A;
+  --color-dtl-blue: #1E90FF;
+  --color-dtl-blue-dark: #0066CC;
+  --color-dtl-chrome: #C0C0C0;
+  --color-dtl-chrome-light: #E8E8E8;
+  --color-dtl-accent: #00D4FF;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(30,144,255,0.3); }
+    50% { box-shadow: 0 0 40px rgba(30,144,255,0.6); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+:root {
+  --dtl-navy: #0A1628;
+  --dtl-blue: #1E90FF;
+  --dtl-accent: #00D4FF;
+  --dtl-chrome: #C0C0C0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dtl-navy);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(30, 144, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(30, 144, 255, 0.15);
+}
+
+/* Glow text */
+.text-glow {
+  text-shadow: 0 0 20px rgba(30, 144, 255, 0.5), 0 0 40px rgba(30, 144, 255, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dtl-navy);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dtl-blue);
+  border-radius: 3px;
+}
+
+/* Gradient border utility */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--dtl-blue), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
